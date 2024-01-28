@@ -1,7 +1,7 @@
 import React from 'react';
 import SidebarNavigation from './components/sidebar-navigation/SidebarNavigation'
 import ContentPhoto from './components/content-photo/ContentPhoto';
-import './App.css';
+import './App.sass';
 import ContentPage from './components/content-page/ContentPage';
 // import CounterComponent from './components/counter/CounterComponent';
 

@@ -8,7 +8,7 @@ import Link from "@mui/material/Link";
 import { Button } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { changeLanguage } from "../../features/langSlice";
-import styles from "./sidebarNav.module.css";
+import "./sidebarNav.sass";
 
 const SidebarNavigation = () => {
   const language = useSelector((state) => state.language.value);
@@ -20,14 +20,14 @@ const SidebarNavigation = () => {
   }, [language]);
 
   return (
-    <nav className={styles.navigationBlock}>
+    <nav className='navigationBlock'>
           <Button
             variant="contained"
             onClick={() => dispatch(changeLanguage())}
           >
             {lang}
           </Button>
-      <ul className={styles.navigationList}>
+      <ul className='navigationList'>
         <li>
           <Link href="#">
             <Person4Icon />
