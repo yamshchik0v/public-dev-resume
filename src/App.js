@@ -1,24 +1,20 @@
-import logo from './logo.svg';
+import React from 'react';
+import SidebarNavigation from './components/sidebar-navigation/SidebarNavigation'
+import ContentPhoto from './components/content-photo/ContentPhoto';
 import './App.css';
+import ContentPage from './components/content-page/ContentPage';
+// import CounterComponent from './components/counter/CounterComponent';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main className="main" >
+      <section className='page-content'>
+        <SidebarNavigation/>
+        <ContentPhoto/>
+        <ContentPage/>
+        </section>
+      {/* <CounterComponent/> */}
+    </main>
   );
 }
 
