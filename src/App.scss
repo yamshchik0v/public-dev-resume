@@ -1,0 +1,30 @@
+
+@use 'util/styles/theme';
+
+* {
+  font-family: "Roboto", "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.main {
+  color: theme.$primary-text;
+  box-sizing: border-box;
+  padding: 1rem 1.25rem;
+  display: grid;
+  place-items: center;
+  width: 100vw;
+  height: 100vh;
+
+  & .page-content {
+    width: 1200px;
+    height: 700px;
+    position: relative;
+    background-color: theme.$primary-bg-color;
+    border-radius: 1rem;
+
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 10px;
+  }
+}

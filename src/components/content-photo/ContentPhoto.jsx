@@ -1,6 +1,6 @@
 import React from "react";
 import avat_800 from "../../util/image/avat_800.jpg";
-import "./contentPhoto.sass";
+import "./contentPhoto.scss";
 import TelegramIcon from "@mui/icons-material/Telegram";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
