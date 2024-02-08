@@ -1,0 +1,15 @@
+@use '../../util/styles/theme.scss';
+
+.page__container {
+  padding: 1.5em 2em 1em;
+  width: 100%;
+}
+.title {
+  font-size: 3rem;
+  margin: 0.5em 0;
+}
+.basic-info__container {
+//   & ul{
+//     color: theme.$primary-text-pink;
+//   }
+}
