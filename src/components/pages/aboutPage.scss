@@ -3,13 +3,71 @@
 .page__container {
   padding: 1.5em 2em 1em;
   width: 100%;
+  font-family: 'Roboto';
 }
+
 .title {
-  font-size: 3rem;
-  margin: 0.5em 0;
+  font-size: 3em;
+  font-weight: 900;
 }
+
 .basic-info__container {
-//   & ul{
-//     color: theme.$primary-text-pink;
-//   }
+  & ul.basic-info__list {
+    display: flex;
+    margin: 1em 0;
+    font-weight: 500;
+    color: theme.$primary-text-pink;
+    list-style: none;
+
+    & li.basic-info__list-item {
+      position: relative;
+      margin-right: 2em;
+      font-style: italic;
+
+      &:not(:first-child):before {
+        content: '/';
+        position: absolute;
+        left: -1em;
+        transform: translateX(-50%);
+        font-weight: 500;
+        color: theme.$primary-text;
+      }
+    }
+  }
+}
+
+.about-me__container {
+  & p {
+    position: relative;
+    font-size: 1.2em;
+    line-height: 1em;
+  }
+}
+.line {
+  display: block;
+  height: 1px;
+  width: 100%;
+  background-color: theme.$secondary-bg-color;
+  margin: 3em 0;
+}
+
+.stack__container{
+  
+  &.stack__title{
+    font-weight: 900;
+  }
+
+  & ul.stack__list{
+    display: flex;
+    list-style: none;
+    display: flex;
+
+    & .stack__list-item {
+      
+      & svg {
+        max-width: 50px;
+        max-height: 50px;
+      }
+    }
+  }
 }
