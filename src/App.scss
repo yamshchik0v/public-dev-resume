@@ -1,13 +1,13 @@
-
 @use 'util/styles/theme';
 
 * {
-  font-family: "Roboto", "Arial", sans-serif;
+  font-family: 'Roboto', 'Arial', sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 .main {
+  font-size: clamp(1rem, 0.5rem + 0.092vw, 2rem);
   color: theme.$primary-text;
   box-sizing: border-box;
   padding: 1rem 1.25rem;

@@ -1,23 +1,42 @@
 @use '../../util/styles/theme.scss';
-
+// PAGE
 .page__container {
+  font-size: 1.2em;
   padding: 1.5em 2em 1em;
   width: 100%;
   font-family: 'Roboto';
+  overflow-y: scroll;
+
+  & .page__title {
+    font-size: 3.5em;
+    margin: 0.3em 0 0;
+    font-weight: 900;
+  }
+  & .subtitle {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+    font-weight: 900;
+  }
+  & ul {
+    list-style: none;
+    display: flex;
+  }
+
+  & .line {
+    background-color: theme.$secondary-bg-color;
+    display: block;
+    width: 100%;
+    height: 1px;
+    margin: 2.5em 0;
+  }
 }
 
-.title {
-  font-size: 3em;
-  font-weight: 900;
-}
-
+// BASIC INFO
 .basic-info__container {
   & ul.basic-info__list {
-    display: flex;
-    margin: 1em 0;
+    margin: 2rem 0 2.5rem;
     font-weight: 500;
     color: theme.$primary-text-pink;
-    list-style: none;
 
     & li.basic-info__list-item {
       position: relative;
@@ -26,47 +45,50 @@
 
       &:not(:first-child):before {
         content: '/';
+        font-style: normal;
+        color: theme.$primary-text;
         position: absolute;
         left: -1em;
         transform: translateX(-50%);
-        font-weight: 500;
-        color: theme.$primary-text;
       }
     }
   }
 }
-
+// ABOUT
 .about-me__container {
-  & p {
+  & p.about-me__paragraph {
     position: relative;
-    font-size: 1.2em;
     line-height: 1em;
   }
 }
-.line {
-  display: block;
-  height: 1px;
-  width: 100%;
-  background-color: theme.$secondary-bg-color;
-  margin: 3em 0;
-}
-
-.stack__container{
-  
-  &.stack__title{
-    font-weight: 900;
+// PRINCIPLES
+.principles__container {
+  & ul.principles__list {
+    flex-flow: nowrap column;
+    & li.principles__list-item {
+      gap: 0.5em;
+      &:before {
+        content: '—';
+        font-weight: 900;
+        color: theme.$primary-text-pink;
+        position: relative;
+        left: 0;
+        margin-right: 0.5rem;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
   }
-
-  & ul.stack__list{
-    display: flex;
-    list-style: none;
-    display: flex;
-
+}
+// STACK
+.stack__container {
+  & ul.stack__list {
+    flex-flow: wrap row;
+    gap: 1em;
     & .stack__list-item {
-      
       & svg {
-        max-width: 50px;
-        max-height: 50px;
+        max-width: 2.2em;
+        max-height: 2.2em;
       }
     }
   }

@@ -15,7 +15,7 @@ const About = () => {
   }
   return (
     <section className='page__container'>
-      <h1 className='title'>about me</h1>
+      <h1 className='page__title'>about me</h1>
       <div className='basic-info__container'>
         <ul className='basic-info__list'>
           <li className='basic-info__list-item'>
@@ -26,7 +26,7 @@ const About = () => {
         </ul>
       </div>
       <div className='about-me__container'>
-        <p>
+        <p className='about-me__paragraph'>
           I was born in Russia, Velikiye Luki, Pskov region in 1999. I start
           programming as a hobby in 2021 and learned everything by myself using
           internet I worked in QC in the insurance industry, and spent most of
@@ -37,7 +37,7 @@ const About = () => {
       </div>
       <div className='line'></div>
       <div className='stack__container'>
-        <h2 className='stack__title'>Development stack</h2>
+        <h3 className='subtitle'>development stack</h3>
         <ul className='stack__list'>
           <li className='stack__list-item'>
             <svg
@@ -121,8 +121,43 @@ const About = () => {
               </g>
             </svg>
           </li>
+          <li className='stack__list-item'>
+            <svg
+              width='50'
+              height='50'
+              viewBox='0 0 256 256'
+              xmlns='http://www.w3.org/2000/svg'
+              preserveAspectRatio='xMinYMin meet'
+            >
+              <path
+                d='M251.172 116.594L139.4 4.828c-6.433-6.437-16.873-6.437-23.314 0l-23.21 23.21 29.443 29.443c6.842-2.312 14.688-.761 20.142 4.693 5.48 5.489 7.02 13.402 4.652 20.266l28.375 28.376c6.865-2.365 14.786-.835 20.269 4.657 7.663 7.66 7.663 20.075 0 27.74-7.665 7.666-20.08 7.666-27.749 0-5.764-5.77-7.188-14.235-4.27-21.336l-26.462-26.462-.003 69.637a19.82 19.82 0 0 1 5.188 3.71c7.663 7.66 7.663 20.076 0 27.747-7.665 7.662-20.086 7.662-27.74 0-7.663-7.671-7.663-20.086 0-27.746a19.654 19.654 0 0 1 6.421-4.281V94.196a19.378 19.378 0 0 1-6.421-4.281c-5.806-5.798-7.202-14.317-4.227-21.446L81.47 39.442l-76.64 76.635c-6.44 6.443-6.44 16.884 0 23.322l111.774 111.768c6.435 6.438 16.873 6.438 23.316 0l111.251-111.249c6.438-6.44 6.438-16.887 0-23.324'
+                fill='#DE4C36'
+              />
+            </svg>
+          </li>
+          <li className='stack__list-item'><svg height="50" preserveAspectRatio="xMidYMid" width="50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 153.6"><linearGradient id="a" x1="-2.778%" y1="32%" y2="67.556%"><stop offset="0" stop-color="#2298bd"/><stop offset="1" stop-color="#0ed7b5"/></linearGradient><path d="M128 0C93.867 0 72.533 17.067 64 51.2 76.8 34.133 91.733 27.733 108.8 32c9.737 2.434 16.697 9.499 24.401 17.318C145.751 62.057 160.275 76.8 192 76.8c34.133 0 55.467-17.067 64-51.2-12.8 17.067-27.733 23.467-44.8 19.2-9.737-2.434-16.697-9.499-24.401-17.318C174.249 14.743 159.725 0 128 0zM64 76.8C29.867 76.8 8.533 93.867 0 128c12.8-17.067 27.733-23.467 44.8-19.2 9.737 2.434 16.697 9.499 24.401 17.318C81.751 138.857 96.275 153.6 128 153.6c34.133 0 55.467-17.067 64-51.2-12.8 17.067-27.733 23.467-44.8 19.2-9.737-2.434-16.697-9.499-24.401-17.318C110.249 91.543 95.725 76.8 64 76.8z" fill="url(#a)"/></svg></li>
         </ul>
       </div>
+      <div className='line'></div>
+      <div className='principles__container'>
+        <h3 className='subtitle'>my principles</h3>
+        <ul className='principles__list'>
+          <li className='principles__list-item'>Continuous self-education</li>
+          <li className='principles__list-item'>SOLID</li>
+          <li className='principles__list-item'>DRY</li>
+          <li className='principles__list-item'>Punctuality</li>
+          <li className='principles__list-item'>Responsibility</li>
+        </ul>
+      </div>
+      <div className='line'></div>
+      <div className='goal__container'>
+        <h3 className='subtitle'>my goal</h3>
+        <p className='goal__paragraph'>
+          My goal is to become a senior developer and teach other people to make
+          quality and useful IT products
+        </p>
+      </div>
+
       {/* Я работал в контроле качества обслуживания в сфере страхования, большая часть времени уходила на работу, а не обучение фронтенду. Но я твёрдо решил, что хочу стать частью коммьюнити IT и прокачиваться как разработчик */}
     </section>
   )
