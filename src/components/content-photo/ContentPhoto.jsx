@@ -1,5 +1,5 @@
 import React from 'react'
-import avat_800 from '../../util/image/avat_800.jpg'
+import avat_800 from '../../assets/image/avat_800.jpg'
 import './contentPhoto.scss'
 import TelegramIcon from '@mui/icons-material/Telegram'
 import GitHubIcon from '@mui/icons-material/GitHub'

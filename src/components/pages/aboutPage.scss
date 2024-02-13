@@ -14,8 +14,13 @@
   }
   & .subtitle {
     font-size: 2em;
-    margin-bottom: 0.5em;
+    margin-bottom: 1em;
     font-weight: 900;
+  }
+
+  & .paragraph {
+    position: relative;
+    line-height: 1.2em;
   }
   & ul {
     list-style: none;
@@ -28,6 +33,11 @@
     width: 100%;
     height: 1px;
     margin: 2.5em 0;
+  }
+
+  // SCROLLBAR
+  &::-webkit-scrollbar {
+    display: none;
   }
 }
 
@@ -54,42 +64,47 @@
     }
   }
 }
-// ABOUT
-.about-me__container {
-  & p.about-me__paragraph {
-    position: relative;
-    line-height: 1em;
-  }
-}
-// PRINCIPLES
-.principles__container {
-  & ul.principles__list {
-    flex-flow: nowrap column;
-    & li.principles__list-item {
-      gap: 0.5em;
-      &:before {
-        content: '—';
-        font-weight: 900;
-        color: theme.$primary-text-pink;
-        position: relative;
-        left: 0;
-        margin-right: 0.5rem;
-        top: 50%;
-        transform: translateY(-50%);
-      }
-    }
-  }
-}
 // STACK
 .stack__container {
   & ul.stack__list {
     flex-flow: wrap row;
     gap: 1em;
     & .stack__list-item {
-      & svg {
-        max-width: 2.2em;
-        max-height: 2.2em;
+      & img {
+        width: 2em;
+        height: 2em;
       }
+    }
+  }
+}
+// PRINCIPLES
+.principles__container {
+  & ul.principles__list {
+    flex-flow: wrap row;
+    gap: 1em;
+    & li.principles__list-item {
+      width: calc(50% - 0.5em);
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: start;
+      gap: 0.5em;
+      font-weight: 900;
+      & svg {
+        color: theme.$primary-text-pink;
+        font-size: 3em;
+      }
+    }
+  }
+}
+// GOAL
+.goal__container {
+  & .goal__info {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+    & svg {
+      font-size: 3em;
+      color: theme.$primary-text-pink;
     }
   }
 }

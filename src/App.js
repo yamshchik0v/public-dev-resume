@@ -7,7 +7,8 @@ import About from './components/pages/About'
 function App() {
   const [isDark, setIsDark] = useState(false)
   return (
-    <main className='main' data-theme={isDark ? 'dark' : 'light'}>
+    <main className='main' data-theme='dark'>
+     {/* {isDark ? 'dark' : 'light'} */}
       <section className='page-content'>
         <SidebarNavigation />
         <ContentPhoto />
