@@ -1,6 +1,6 @@
 @use '../../util/styles/theme';
 
-.navigationBlock {
+.navigation__container {
   max-height: calc(100% - 20px);
   display: flex;
   flex-direction: column;
@@ -11,7 +11,7 @@
   max-width: 80px;
   padding: 10px;
 
-    & .navigationList {
+    & .navigation__list {
         margin: 0;
         padding: 0.2rem 0.1rem;
         list-style: none;
