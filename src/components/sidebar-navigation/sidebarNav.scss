@@ -1,29 +1,97 @@
 @use '../../util/styles/theme';
+@import '../../util/styles/mixins/mixins.scss';
 
 .navigation__container {
-  max-height: calc(100% - 20px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  background-color: rgb(255, 255, 255);
-  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
-  max-width: 80px;
-  padding: 10px;
+  height: 100%;
+  background-color: theme.$primary-bg-color;
+  min-width: 70px;
+  padding: 1.5em 1em;
+  @include flex(column, nowrap, space-between, center);
 
-    & .navigation__list {
-        margin: 0;
-        padding: 0.2rem 0.1rem;
-        list-style: none;
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        & > li svg{
-            transition: transform 200ms, color 150ms;
-            &:hover {
-                color: theme.$primary-text-pink;
-                transform: scale(1.7);
-            }
+  & .toggle__list {
+    @include flex(column, nowrap, space-between, center);
+    gap: 1em;
+
+    & .toggle-theme {
+
+      & input[type='checkbox']#toggleTheme {
+        opacity: 0;
+        position: absolute;
+
+        & + label {
+          @include flex(row, nowrap, center, center);
+          position: relative;
+          cursor: pointer;
+          content: '';
+          width: 2.25em;
+          height: 1em;
+          background-color: theme.$primary-bg-color;
+          border-radius: 1em;
+          transition: 0.2s;
+          box-shadow: 0 0.5em 1em #00000033 inset;
+
+          &:after {
+            content: '';
+            width: 1.2em;
+            height: 1.2em;
+            border-radius: 50%;
+            position: absolute;
+            background: linear-gradient(180deg, #696969, #4e4e4e);
+            box-shadow: 0 0.2em 0.2em #00000033;
+            left: 0;
+            transition: 0.2s;
+          }
+          &:active:after {
+            width: 1.3em;
+          }
         }
+      }
+
+      & input[type='checkbox']#toggleTheme:checked + label {
+        background: theme.$secondary-bg-color;
+
+        &:after {
+          background: linear-gradient(180deg, #c7c7c7, #868686);
+          left: 2.3em;
+          transform: translateX(-100%);
+        }
+      }
     }
+  }
+
+  & .navigation__list {
+    list-style: none;
+    margin: 0;
+    padding: 0.2rem 0.1rem;
+    @include flex(column, nowrap, space-between, center);
+    gap: 1rem;
+  }
+
+  & svg {
+    color: theme.$primary-text;
+    font-size: 2em;
+    transition: color 0.2s;
+    &:hover {
+      color: theme.$primary-text-pink;
+    }
+  }
+
+  & button {
+    background: inherit;
+    border: none;
+    outline: none;
+    &.toggle-lang {
+      width: 30px;
+      font-size: 1.25em;
+      font-weight: 900;
+      transition: color 150ms;
+      text-align: center;
+      &:hover {
+        color: theme.$primary-text-pink;
+      }
+    }
+    &.download-resume svg:hover {
+      color: #53aa3d;
+    }
+  }
 }
