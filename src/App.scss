@@ -21,9 +21,10 @@
     height: 700px;
     position: relative;
     background-color: theme.$primary-bg-color;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
 
     display: flex;
     flex-wrap: nowrap;
-    gap: 10px;
+    gap: 1em;
   }
 }
