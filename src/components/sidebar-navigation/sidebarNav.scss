@@ -5,15 +5,15 @@
   height: 100%;
   background-color: theme.$primary-bg-color;
   min-width: 70px;
-  padding: 1.5em 1em;
+  padding: 1em 1em 1.5em ;
   @include flex(column, nowrap, space-between, center);
 
   & .toggle__list {
     @include flex(column, nowrap, space-between, center);
-    gap: 1em;
+    gap: .2em;
 
     & .toggle-theme {
-
+      
       & input[type='checkbox']#toggleTheme {
         opacity: 0;
         position: absolute;
@@ -51,7 +51,7 @@
         background: theme.$secondary-bg-color;
 
         &:after {
-          background: linear-gradient(180deg, #c7c7c7, #868686);
+          background: linear-gradient(180deg, #ffffff, #bbbbbb);
           left: 2.3em;
           transform: translateX(-100%);
         }
@@ -80,11 +80,13 @@
     background: inherit;
     border: none;
     outline: none;
+    cursor: pointer;
+    
     &.toggle-lang {
       width: 30px;
       font-size: 1.25em;
       font-weight: 900;
-      transition: color 150ms;
+      transition: color .2s;
       text-align: center;
       &:hover {
         color: theme.$primary-text-pink;

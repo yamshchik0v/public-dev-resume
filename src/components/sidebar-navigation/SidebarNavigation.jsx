@@ -22,14 +22,12 @@ const SidebarNavigation = () => {
   return (
     <aside className='navigation__container'>
       <div className='toggle__list'>
-        <Tooltip placement=''>
           <button
             className='toggle-lang'
             onClick={() => dispatch(changeLanguage())}
           >
             {lang}
           </button>
-        </Tooltip>
         <div className='toggle-theme'>
           <input type='checkbox' id='toggleTheme' />
           <label htmlFor='toggleTheme'></label>
