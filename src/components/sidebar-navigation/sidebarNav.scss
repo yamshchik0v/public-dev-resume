@@ -1,19 +1,18 @@
-@use '../../util/styles/theme';
+@use '../../util/styles/theme' as *;
 @import '../../util/styles/mixins/mixins.scss';
 
 .navigation__container {
   height: 100%;
-  background-color: theme.$primary-bg-color;
+
   min-width: 70px;
-  padding: 1em 1em 1.5em ;
+  padding: 1em 1em 1.5em;
   @include flex(column, nowrap, space-between, center);
 
   & .toggle__list {
     @include flex(column, nowrap, space-between, center);
-    gap: .2em;
+    gap: 0.2em;
 
     & .toggle-theme {
-      
       & input[type='checkbox']#toggleTheme {
         opacity: 0;
         position: absolute;
@@ -25,7 +24,7 @@
           content: '';
           width: 2.25em;
           height: 1em;
-          background-color: theme.$primary-bg-color;
+          background-color: $primary-bg-color;
           border-radius: 1em;
           transition: 0.2s;
           box-shadow: 0 0.5em 1em #00000033 inset;
@@ -48,7 +47,7 @@
       }
 
       & input[type='checkbox']#toggleTheme:checked + label {
-        background: theme.$secondary-bg-color;
+        background: $secondary-bg-color;
 
         &:after {
           background: linear-gradient(180deg, #ffffff, #bbbbbb);
@@ -68,11 +67,10 @@
   }
 
   & svg {
-    color: theme.$primary-text;
     font-size: 2em;
     transition: color 0.2s;
     &:hover {
-      color: theme.$primary-text-pink;
+      color: $primary-text-pink;
     }
   }
 
@@ -81,19 +79,19 @@
     border: none;
     outline: none;
     cursor: pointer;
-    
+
     &.toggle-lang {
       width: 30px;
       font-size: 1.25em;
       font-weight: 900;
-      transition: color .2s;
+      transition: color 0.2s;
       text-align: center;
       &:hover {
-        color: theme.$primary-text-pink;
+        color: $primary-text-pink;
       }
     }
     &.download-resume svg:hover {
-      color: #53aa3d;
+      color: $text-download
     }
   }
 }
