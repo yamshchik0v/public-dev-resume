@@ -1,14 +1,14 @@
-@use 'util/styles/theme';
+@use 'util/styles/theme' as *;
 
 * {
   font-family: 'Roboto', 'Arial', sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: background-color .2s ease;
 }
 .main {
   font-size: clamp(1rem, 0.5rem + 0.092vw, 2rem);
-  color: theme.$primary-text;
   box-sizing: border-box;
   padding: 1rem 1.25rem;
   display: grid;
@@ -20,11 +20,31 @@
     width: 1200px;
     height: 700px;
     position: relative;
-    background-color: theme.$primary-bg-color;
+
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
 
     display: flex;
     flex-wrap: nowrap;
     gap: 1em;
+  }
+}
+
+/* DARK theme configuration*/
+:root[data-theme='dark'] {
+  main {
+    color: $primary-text-dark;
+    & .page-content {
+      background-color: $primary-bg-color-dark;
+    }
+  }
+}
+
+/* LIGHT theme configuration*/
+:root[data-theme='light'] {
+  main {
+    color: $primary-text;
+    & .page-content {
+      background-color: $primary-bg-color;
+    }
   }
 }

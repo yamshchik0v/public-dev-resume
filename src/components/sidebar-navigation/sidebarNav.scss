@@ -1,22 +1,28 @@
-@use '../../util/styles/theme';
+@use '../../util/styles/theme' as *;
 @import '../../util/styles/mixins/mixins.scss';
 
-.navigation__container {
-  height: 100%;
-  background-color: theme.$primary-bg-color;
-  min-width: 70px;
-  padding: 1em 1em 1.5em ;
+aside.navigation__container {
   @include flex(column, nowrap, space-between, center);
+  height: 100%;
+  min-width: 70px;
+  padding: 1em 1em 1.5em;
 
   & .toggle__list {
     @include flex(column, nowrap, space-between, center);
-    gap: .2em;
+    gap: 0.2em;
+
+    & button.toggle-lang {
+      font-size: 1.25em;
+      font-weight: 900;
+      transition: color 0.2s;
+      text-align: center;
+    }
 
     & .toggle-theme {
-      
       & input[type='checkbox']#toggleTheme {
         opacity: 0;
         position: absolute;
+        display: none;
 
         & + label {
           @include flex(row, nowrap, center, center);
@@ -25,7 +31,7 @@
           content: '';
           width: 2.25em;
           height: 1em;
-          background-color: theme.$primary-bg-color;
+          background-color: $primary-bg-color;
           border-radius: 1em;
           transition: 0.2s;
           box-shadow: 0 0.5em 1em #00000033 inset;
@@ -41,6 +47,7 @@
             left: 0;
             transition: 0.2s;
           }
+
           &:active:after {
             width: 1.3em;
           }
@@ -48,7 +55,7 @@
       }
 
       & input[type='checkbox']#toggleTheme:checked + label {
-        background: theme.$secondary-bg-color;
+        background: $secondary-bg-color;
 
         &:after {
           background: linear-gradient(180deg, #ffffff, #bbbbbb);
@@ -60,40 +67,91 @@
   }
 
   & .navigation__list {
+    @include flex(column, nowrap, space-between, center);
     list-style: none;
     margin: 0;
     padding: 0.2rem 0.1rem;
-    @include flex(column, nowrap, space-between, center);
     gap: 1rem;
-  }
 
-  & svg {
-    color: theme.$primary-text;
-    font-size: 2em;
-    transition: color 0.2s;
-    &:hover {
-      color: theme.$primary-text-pink;
+    & svg {
+      font-size: 2em;
+      transition: color 0.2s, scale 0.2s;
+
+      &:hover {
+        scale: 1.1;
+        color: $primary-text-pink;
+      }
     }
   }
 
   & button {
-    background: inherit;
+    background-color: inherit;
     border: none;
     outline: none;
     cursor: pointer;
     
-    &.toggle-lang {
-      width: 30px;
-      font-size: 1.25em;
-      font-weight: 900;
-      transition: color .2s;
-      text-align: center;
+    &.download-resume {
+      transition: color .2s, scale .2s;
       &:hover {
-        color: theme.$primary-text-pink;
+        scale: 1.1;
       }
     }
-    &.download-resume svg:hover {
-      color: #53aa3d;
+  }
+}
+/* DARK theme configuration*/
+:root[data-theme='dark'] {
+  .navigation__container {
+    background-color: $primary-bg-color-dark;
+    color: $primary-text-dark;
+    & button.toggle-lang {
+      color: $primary-text-dark;
+      &:hover{
+        color: $primary-text-pink;
+      }
+    }
+    & .navigation__list {
+      & svg {
+        color: $primary-text-dark;
+        &:hover {
+          color: $primary-text-pink;
+        }
+      }
+    }
+
+    & button.download-resume {
+      color: $primary-text-dark;
+      &:hover {
+        color: $text-download;
+      }
+    }
+  }
+}
+
+/* LIGHT theme configuration*/
+:root[data-theme='light'] {
+  .navigation__container {
+    background-color: $primary-bg-color;
+    color: $primary-text;
+    & button.toggle-lang {
+      color: $primary-text;
+      &:hover{
+        color: $primary-text-pink;
+      }
+    }
+    & .navigation__list {
+      & svg {
+        color: $primary-text;
+        &:hover {
+          color: $primary-text-pink;
+        }
+      }
+    }
+    
+    & button.download-resume {
+      color: $primary-text;
+      &:hover {
+        color: $text-download;
+      }
     }
   }
 }

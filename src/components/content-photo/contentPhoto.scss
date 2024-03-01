@@ -1,9 +1,9 @@
-@use '../../util/styles/theme';
+@use '../../util/styles/theme' as *;
 
 .imageBlock {
   height: 100%;
+  // min-width: 300px;
   display: flex;
-  transition: transform 0.5s ease;
   transform: scale(1.05);
 }
 .imageCover {
@@ -12,7 +12,7 @@
 .imageShadow {
   width: 100%;
   height: 100%;
-  background: theme.$photo-shadow-gradient;
+  background: $photo-shadow-gradient;
 
   &:after,
   &:before {
@@ -22,7 +22,7 @@
     bottom: 0;
     width: 100%;
     height: 20%;
-    background: theme.$photo-shadow-gradient;
+    background: $photo-shadow-gradient;
   }
   &:after {
     rotate: 180deg;
@@ -36,9 +36,7 @@ img.image {
   object-fit: cover;
   user-select: none;
 }
-.imageBlock:hover .image {
-  /* scale: 1.01; */
-}
+
 .imageInfo {
   position: absolute;
   bottom: 0;
@@ -57,18 +55,18 @@ img.image {
   padding: 0.75rem 1rem;
   gap: 2rem;
   & li.listItem a svg {
-    color: theme.$primary-text-pink !important;
+    color: $primary-text-pink !important;
   }
 }
 .imageTitle {
   text-align: center;
   font-size: 2.5rem;
   font-weight: 700;
-  color: theme.$secondary-text;
+  color: $secondary-text;
 }
 .imageSubtitle {
   margin: 10px 0;
-  color: theme.$primary-text-pink;
+  color: $primary-text-pink;
 }
 .link {
   padding: auto;

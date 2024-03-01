@@ -1,16 +1,16 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './App.scss'
 import SidebarNavigation from './components/sidebar-navigation/SidebarNavigation'
 import ContentPhoto from './components/content-photo/ContentPhoto'
 import About from './components/pages/About'
+import { useSelector } from 'react-redux'
 
 function App() {
-  const [isDark, setIsDark] = useState(false)
+  const theme = useSelector((state) => state.theme)
   return (
-    <main className='main' data-theme='dark'>
-     {/* {isDark ? 'dark' : 'light'} */}
+    <main className='main'>
       <section className='page-content'>
-        <SidebarNavigation />
+        <SidebarNavigation theme={theme}/>
         <ContentPhoto />
         <About />
       </section>

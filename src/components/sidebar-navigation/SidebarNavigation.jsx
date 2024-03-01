@@ -7,18 +7,33 @@ import FileDownloadOutlinedIcon from '@mui/icons-material/FileDownloadOutlined'
 import Link from '@mui/material/Link'
 import { useDispatch, useSelector } from 'react-redux'
 import { changeLanguage } from '../../features/langSlice'
+import { set } from '../../features/themeSlice'
 import './sidebarNav.scss'
 import Tooltip from '@mui/material/Tooltip'
 
 const SidebarNavigation = () => {
   const language = useSelector((state) => state.language.value)
+  const theme = useSelector((state) => state.theme)
   const dispatch = useDispatch()
+
   const [lang, setLang] = useState(language)
+  const [isChecked, setIsChecked] = useState(theme === 'dark')
 
   useEffect(() => {
     setLang(language)
   }, [language])
 
+  useEffect(() => {
+    setIsChecked(theme === 'dark')
+    document.documentElement.dataset.theme = theme
+    localStorage.setItem('theme', theme)
+  }, [theme])
+  
+
+  function themeHandleChange() {
+    const next = theme === 'light' ? 'dark' : 'light';
+    dispatch(set(next))
+  } 
   return (
     <aside className='navigation__container'>
       <div className='toggle__list'>
@@ -29,7 +44,7 @@ const SidebarNavigation = () => {
             {lang}
           </button>
         <div className='toggle-theme'>
-          <input type='checkbox' id='toggleTheme' />
+          <input type='checkbox' id='toggleTheme' checked={isChecked} onChange={themeHandleChange}/>
           <label htmlFor='toggleTheme'></label>
         </div>
       </div>
@@ -65,7 +80,7 @@ const SidebarNavigation = () => {
           </Tooltip>
         </ul>
       </nav>
-      <Tooltip title='Download Resume' placement='bottom' disableInteractive>
+      <Tooltip title='Download Resume' placement='left' disableInteractive>
         <button className='download-resume'>
           <FileDownloadOutlinedIcon />
         </button>

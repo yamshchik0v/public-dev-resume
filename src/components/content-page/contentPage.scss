@@ -1,11 +1,11 @@
-@use '../../util/styles/theme';
+@use '../../util/styles/theme' as *;
 
 .contentPageContainer {
   display: flex;
   width: 100%;
   flex-direction: column;
   height: 100%;
-  background-color: theme.$primary-bg-color;
+
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
   padding: 1rem 3rem;
 }
@@ -13,4 +13,14 @@
 .pageTitle {
   font-size: 3rem;
   color: theme.$primary-text;
+}
+:root[data-theme='dark'] {
+  .contentPageContainer {
+    background-color: $primary-bg-color-dark;
+  }
+}
+:root[data-theme='light'] {
+  .contentPageContainer {
+    background-color: $primary-bg-color;
+  }
 }
