@@ -80,7 +80,7 @@ const SidebarNavigation = () => {
           </Tooltip>
         </ul>
       </nav>
-      <Tooltip title='Download Resume' placement='bottom' disableInteractive>
+      <Tooltip title='Download Resume' placement='left' disableInteractive>
         <button className='download-resume'>
           <FileDownloadOutlinedIcon />
         </button>

@@ -1,21 +1,18 @@
-$primary-bg-color: #f6f8fa; // used in deep background
-$secondary-bg-color: #808080; // used in content background
+$primary-bg-color: #f6f8fa; // used in content background
+$secondary-bg-color: #f8f8f8; // used in deep background
 $text-download: #53aa3d;
 $primary-text: #313131; // usual text & headers
 $secondary-text: #eeeeee; // used in contrast to dark backgrounds
 $primary-text-pink: #af4beb; // used in svg, links and highlighted elements as main theme color
-
 $photo-shadow-gradient: linear-gradient(
   hsl(0 0% 0% / 0) 20%,
   hsl(0 0% 0% / 0.5)
 );
 
 $primary-bg-color-dark: #1c1e1f;
-$secondary-bg-color-dark: #414141;
-
+$secondary-bg-color-dark: #141414;
 $primary-text-dark: #ffffff;
 $secondary-text-dark: #cccccc;
-
 $photo-shadow-gradient-dark: linear-gradient(
   hsl(0 0% 0% / 0) 20%,
   hsl(0 0% 0% / 0.5)
